@@ -17,9 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/articulos', function () {
-    return view('articulos');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
 })->name('dashboard');
 
 
+Route::resource('articulos', [LibrosController::class]);
 
